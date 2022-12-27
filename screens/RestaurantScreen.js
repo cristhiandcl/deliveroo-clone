@@ -16,6 +16,7 @@ import {
   StarIcon,
 } from "react-native-heroicons/solid";
 import { QuestionMarkCircleIcon } from "react-native-heroicons/outline";
+import DishCard from "../components/DishCard";
 
 const RestaurantScreen = () => {
   const navigation = useNavigation();
@@ -37,6 +38,7 @@ const RestaurantScreen = () => {
   useLayoutEffect(() => {
     navigation.setOptions({ headerShown: false });
   });
+
   return (
     // <SafeAreaView>
     <ScrollView>
@@ -70,13 +72,24 @@ const RestaurantScreen = () => {
             <QuestionMarkCircleIcon color="gray" />
             <Text className="font-bold">Have a food allergy?</Text>
           </View>
-          <ChevronRightIcon color="green" />
+          <TouchableOpacity>
+            <ChevronRightIcon color="green" />
+          </TouchableOpacity>
         </View>
       </View>
       <Text className="font-bold text-2xl px-4 pt-6 pb-2">Menu</Text>
       <View className="bg-white p-4">
         <View>
-          <Text>trial</Text>
+          {dishes.map((dish) => (
+            <DishCard
+              id={dish._id}
+              description={dish.description}
+              name={dish.name}
+              image={dish.image}
+              price={dish.price}
+            />
+          ))}
+          {/* <DishCard /> */}
         </View>
       </View>
     </ScrollView>
