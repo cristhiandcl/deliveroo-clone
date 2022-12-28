@@ -41,7 +41,7 @@ const RestaurantScreen = () => {
 
   return (
     // <SafeAreaView>
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View className="relative">
         <Image source={{ uri: urlFor(imgUrl).url() }} className="w-full h-56" />
         <TouchableOpacity
