@@ -2,6 +2,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { MinusCircleIcon, PlusCircleIcon } from "react-native-heroicons/solid";
 import { urlFor } from "../sanity";
+import Currency from "react-currency-formatter";
 
 const DishCard = ({ id, description, name, image, price }) => {
   const [amount, setAmount] = useState(0);
@@ -11,7 +12,9 @@ const DishCard = ({ id, description, name, image, price }) => {
         <View className="flex-1 space-y-2">
           <Text className="text-2xl">{name}</Text>
           <Text className="text-gray-400 font-bold">{description}</Text>
-          <Text className="text-gray-400 font-bold">$ {price} COP</Text>
+          <Text className="text-gray-400 font-bold">
+            <Currency quantity={price} currency="COP" pattern="! ##,### " /> COP
+          </Text>
         </View>
         <Image source={{ uri: urlFor(image).url() }} className="h-20 w-20" />
       </View>
