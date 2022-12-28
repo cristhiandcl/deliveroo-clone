@@ -82,6 +82,7 @@ const RestaurantScreen = () => {
         <View>
           {dishes.map((dish) => (
             <DishCard
+              key={dish._id}
               id={dish._id}
               description={dish.description}
               name={dish.name}
