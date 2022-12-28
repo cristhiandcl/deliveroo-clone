@@ -55,13 +55,13 @@ const RestaurantScreen = () => {
         <Text className="text-3xl font-bold">{title}</Text>
         <View className="flex-row items-center space-x-4 px-1 mt-1.5 mb-4">
           <View className="flex-row items-center space-x-2">
-            <StarIcon color="gray" />
-            <Text className="text-gray-400 font-bold">{rating}</Text>
+            <StarIcon color="green" />
+            <Text className="text-xs text-green-600 font-bold">{rating}</Text>
           </View>
-          <Text className="text-gray-400 font-bold">{genre}</Text>
+          <Text className="text-xs text-gray-400 font-bold">{genre}</Text>
           <View className="flex-row items-center space-x-2">
             <MapPinIcon color="gray" />
-            <Text className="text-gray-400 font-bold">{address}</Text>
+            <Text className="text-xs text-gray-400 font-bold">{address}</Text>
           </View>
         </View>
         <Text className="font-bold text-gray-400 px-1 pb-3">
@@ -79,6 +79,7 @@ const RestaurantScreen = () => {
       </View>
       <Text className="font-bold text-2xl px-4 pt-6 pb-2">Menu</Text>
       <View className="bg-white p-4">
+        {/* dishesRow */}
         <View>
           {dishes.map((dish) => (
             <DishCard
