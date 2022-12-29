@@ -19,7 +19,7 @@ const FeaturedRow = ({ id, title, description }) => {
       .then((data) => setRestaurants(data[0]?.restaurants));
   }, []);
 
-  console.log(restaurants);
+  // console.log(restaurants);
   return (
     <View className="">
       <View className="flex flex-row p-3">

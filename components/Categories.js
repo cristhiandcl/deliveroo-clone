@@ -10,7 +10,7 @@ const Categories = () => {
     client.fetch(`*[_type == "category"]`).then((data) => setCategories(data));
   }, []);
 
-  console.log(categories);
+  // console.log(categories);
   return (
     <ScrollView
       //   contentContainerStyle={{ paddingHorizontal: 15 }}
