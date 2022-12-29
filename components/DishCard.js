@@ -20,7 +20,7 @@ const DishCard = ({ id, description, name, image, price }) => {
   );
   const dispatch = useDispatch();
 
-  console.log(items);
+  // console.log(items);
 
   const addItemToBasket = () => {
     dispatch(addToBasket({ id, description, name, image, price }));
