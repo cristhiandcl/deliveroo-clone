@@ -6,6 +6,7 @@ import Currency from "react-currency-formatter";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToBasket,
+  removeFromBasket,
   // selectBasketItems,
   // selectBasketItemsWithId,
 } from "../feautures/basketSlice";
@@ -24,6 +25,11 @@ const DishCard = ({ id, description, name, image, price }) => {
   const addItemToBasket = () => {
     dispatch(addToBasket({ id, description, name, image, price }));
   };
+
+  const removeItemFromBasket = () => {
+    dispatch(removeFromBasket({ id }));
+  };
+
   return (
     <TouchableOpacity
       className={`border-b-[1px] border-gray-200 py-4 ${
@@ -43,8 +49,11 @@ const DishCard = ({ id, description, name, image, price }) => {
       </View>
       {isPressed && (
         <View className="px-1 flex-row space-x-1 items-center pt-3">
-          <TouchableOpacity>
-            <MinusCircleIcon size={40} color="green" />
+          <TouchableOpacity onPress={removeItemFromBasket}>
+            <MinusCircleIcon
+              size={40}
+              color={items.length > 0 ? "green" : "gray"}
+            />
           </TouchableOpacity>
           <Text>{items.length}</Text>
           <TouchableOpacity onPress={addItemToBasket}>

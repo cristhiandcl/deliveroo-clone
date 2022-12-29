@@ -12,7 +12,13 @@ export const basketSlice = createSlice({
       state.items = [...state.items, action.payload];
     },
     removeFromBasket: (state, action) => {
-      state.value -= 1;
+      const itemsToRemoved = state.items.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      const mirrorBasket = [...state.items];
+      mirrorBasket.splice(itemsToRemoved, 1);
+
+      state.items = [...mirrorBasket];
     },
   },
 });
