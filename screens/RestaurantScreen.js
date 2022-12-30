@@ -103,7 +103,8 @@ const RestaurantScreen = () => {
           </View>
         </View>
       </ScrollView>
-      {basketTotal > 0 && <BasketComponent />}
+      {/* basket */}
+      <BasketComponent />
     </>
   );
 };
