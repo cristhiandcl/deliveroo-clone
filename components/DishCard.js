@@ -20,13 +20,12 @@ const DishCard = ({ id, description, name, image, price }) => {
   );
   const dispatch = useDispatch();
 
-  // console.log(items);
-
   const addItemToBasket = () => {
     dispatch(addToBasket({ id, description, name, image, price }));
   };
 
   const removeItemFromBasket = () => {
+    if (!items.length > 0) return;
     dispatch(removeFromBasket({ id }));
   };
 
