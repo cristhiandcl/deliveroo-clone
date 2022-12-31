@@ -4,11 +4,12 @@ import { useNavigation } from "@react-navigation/native";
 import { XCircleIcon } from "react-native-heroicons/solid";
 import { useSelector } from "react-redux";
 import { selectBasketItems } from "../feautures/basketSlice";
+import { restauranDetails } from "../feautures/restaurantSlice";
 
 const BasketScreen = () => {
   const navigation = useNavigation();
   const items = useSelector(selectBasketItems);
-  const restaurant = useSelector((state) => state.restaurant.details);
+  const restaurant = useSelector(restauranDetails);
   console.log(restaurant);
 
   return (
@@ -16,7 +17,7 @@ const BasketScreen = () => {
       <View className="p-6 relative bg-white">
         <Text className="text-center font-extrabold text-lg">Basket</Text>
         <Text className="text-center text-gray-300 font-bold text-xs">
-          Punto Cubano
+          {restaurant.title}
         </Text>
         <TouchableOpacity
           className="absolute right-2 top-5"
