@@ -23,6 +23,9 @@ const BasketScreen = () => {
     }, {});
 
     setGroupItemsInBasket(groupItems);
+
+    // Go back home if there is no items in basket
+    !items.length > 0 && navigation.navigate("Home");
   }, [items]);
 
   return (
