@@ -2,9 +2,14 @@ import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { XCircleIcon } from "react-native-heroicons/solid";
+import { useSelector } from "react-redux";
+import { selectBasketItems } from "../feautures/basketSlice";
 
 const BasketScreen = () => {
   const navigation = useNavigation();
+  const items = useSelector(selectBasketItems);
+  const restaurant = useSelector((state) => state.restaurant.details);
+  console.log(restaurant);
 
   return (
     <View className="bg-gray-200">
@@ -14,7 +19,7 @@ const BasketScreen = () => {
           Punto Cubano
         </Text>
         <TouchableOpacity
-          className="absolute right-1 top-5"
+          className="absolute right-2 top-5"
           onPress={navigation.goBack}
         >
           <XCircleIcon size={50} color="green" />

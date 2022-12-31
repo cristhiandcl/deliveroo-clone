@@ -12,7 +12,7 @@ const BasketComponent = () => {
 
   if (basketTotal === 0) return null;
 
-  console.log(items);
+  // console.log(items);
 
   return (
     <View className="absolute bottom-8 w-full z-50">
