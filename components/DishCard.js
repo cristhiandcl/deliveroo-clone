@@ -41,7 +41,7 @@ const DishCard = ({ id, description, name, image, price }) => {
           <Text className="text-2xl">{name}</Text>
           <Text className="text-gray-400 font-bold">{description}</Text>
           <Text className="text-gray-400 font-bold">
-            <Currency quantity={price} currency="COP" pattern="! ##,### " /> COP
+            <Currency quantity={price} currency="COP" pattern="!##,### " /> COP
           </Text>
         </View>
         <Image source={{ uri: urlFor(image).url() }} className="h-20 w-20" />
