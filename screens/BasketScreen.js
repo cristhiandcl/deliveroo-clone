@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { XCircleIcon } from "react-native-heroicons/solid";
 import { useSelector } from "react-redux";
@@ -23,7 +23,9 @@ const BasketScreen = () => {
     }, {});
 
     setGroupItemsInBasket(groupItems);
+  }, [items]);
 
+  useEffect(() => {
     // Go back home if there is no items in basket
     !items.length > 0 && navigation.navigate("Home");
   }, [items]);
