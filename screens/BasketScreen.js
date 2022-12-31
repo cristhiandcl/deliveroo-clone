@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import React, { useMemo, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { XCircleIcon } from "react-native-heroicons/solid";
@@ -54,13 +54,14 @@ const BasketScreen = () => {
           </TouchableOpacity>
         </View>
         <View className="h-6"></View>
-        <View className="bg-white">
+        <ScrollView>
           {/* dishes  */}
           {groupedItemsInBasket &&
-            Object.keys(groupedItemsInBasket).map((item) => (
-              <DishesToBuy dish={groupedItemsInBasket[item]} />
+            Object.entries(groupedItemsInBasket).map(([key, items]) => (
+              <DishesToBuy key={key} dish={items} />
             ))}
-        </View>
+        </ScrollView>
+        <View className="h-6"></View>
       </View>
       <View className="p-4 space-y-4 bg-white pb-10">
         <View className="flex-row justify-between">

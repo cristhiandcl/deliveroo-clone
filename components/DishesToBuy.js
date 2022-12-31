@@ -13,7 +13,7 @@ const DishesToBuy = ({ dish }) => {
   };
 
   return (
-    <View className="flex-row items-center mx-4 border-b border-gray-100 py-3">
+    <View className="bg-white flex-row items-center px-4 border-b border-gray-100 py-3 h-fit">
       <View className="flex-row flex-1 items-center space-x-2">
         <Text className="text-green-600 font-bold">{dish.length} x</Text>
         <Image
