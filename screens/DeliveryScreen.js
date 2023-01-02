@@ -43,8 +43,8 @@ const DeliveryScreen = () => {
             </Text>
           </View>
           <Image
-            source={{ uri: "https://links.papareact.com/wru" }}
-            className="h-14 w-14 bg-gray-300 rounded-full"
+            source={{ uri: "https://links.papareact.com/fls" }}
+            className="h-14 w-14"
           />
         </View>
         <View className="flex-1 items-center justify-center bg-green-200">
