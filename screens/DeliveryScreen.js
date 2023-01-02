@@ -51,7 +51,7 @@ const DeliveryScreen = () => {
           <Text className="font-bold text-5xl">Google Maps</Text>
         </View>
       </View>
-      <View className="bg-white flex-row items-center px-4 pt-4 pb-8">
+      <View className="bg-white flex-row items-center px-5 pt-4 pb-10">
         <View className="flex-1 flex-row space-x-3 items-center">
           <Image
             source={{ uri: "https://links.papareact.com/wru" }}
