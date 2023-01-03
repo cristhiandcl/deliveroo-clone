@@ -31,7 +31,7 @@ const DeliveryScreen = () => {
             <Text className="font-extrabold text-gray-400 text-sm">
               Estimated Arrival
             </Text>
-            <Text className="font-extrabold text-3xl mb-2">45-55 Minutes</Text>
+            <Text className="font-extrabold text-3xl mb-2">40-50 Minutes</Text>
             <Progress.Bar
               indeterminate={true}
               color="green"
@@ -49,6 +49,9 @@ const DeliveryScreen = () => {
         </View>
         <View className="flex-1 items-center justify-center bg-green-200">
           <Text className="font-bold text-5xl">Google Maps</Text>
+          <Text className="font-extrabold text-white">
+            Pin with restaurant location
+          </Text>
         </View>
       </View>
       <View className="bg-white flex-row items-center px-5 pt-4 pb-10">
