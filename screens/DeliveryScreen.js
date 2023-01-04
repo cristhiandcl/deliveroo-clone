@@ -11,6 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useSelector } from "react-redux";
 import { restauranDetails } from "../feautures/restaurantSlice";
 import * as Progress from "react-native-progress";
+import MapView, { Marker } from "react-native-maps";
 
 const DeliveryScreen = () => {
   const navigation = useNavigation();
@@ -47,11 +48,32 @@ const DeliveryScreen = () => {
             className="h-14 w-14"
           />
         </View>
-        <View className="flex-1 items-center justify-center bg-green-200">
-          <Text className="font-bold text-5xl">Google Maps</Text>
+        <View className="flex-1 items-center justify-center">
+          {/* <Text className="font-bold text-5xl">Google Maps</Text>
           <Text className="font-extrabold text-white">
             Pin with restaurant location
-          </Text>
+          </Text> */}
+          <MapView
+            initialRegion={{
+              latitude: restaurant.lat,
+              longitude: restaurant.long,
+              latitudeDelta: 0.005,
+              longitudeDelta: 0.005,
+            }}
+            className="flex-1 z-0 border w-full"
+            mapType="mutedStandard"
+          >
+            <Marker
+              coordinate={{
+                latitude: restaurant.lat,
+                longitude: restaurant.long,
+              }}
+              title={restaurant.title}
+              description={restaurant.description}
+              identifier="origin"
+              pinColor="#00CCBB"
+            />
+          </MapView>
         </View>
       </View>
       <View className="bg-white flex-row items-center px-5 pt-4 pb-10">
