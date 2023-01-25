@@ -1,6 +1,6 @@
 # Deliveroo app
 
-My first React Native app, it was developed with react native as already said and styled with TailwindCss (NativeWind)
+This app was developed with react native and styled with TailwindCss (NativeWind)
 
 ## `Libraries`
 
