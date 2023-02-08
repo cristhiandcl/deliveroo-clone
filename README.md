@@ -1,6 +1,6 @@
 # Deliveroo app
 
-This app was developed with react native and styled with TailwindCss (NativeWind)
+This app was developed with the react native Expo CLI and styled with TailwindCss (NativeWind)
 
 ## `Libraries`
 
